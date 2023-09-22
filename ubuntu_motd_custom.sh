@@ -26,3 +26,18 @@ echo "Users logged in: $(who | wc -l)"
 echo "Local IP address: $(hostname -I)"
 echo "Public IP address: $(curl -s ifconfig.me)"
 echo "#############################################"
+
+
+# Disk Usage
+echo "Disk Usage:"
+df -h
+echo "#############################################"
+
+# Memory Usage
+echo "Memory Usage:"
+free -m
+echo "#############################################"
+
+# Last login time
+echo "Last login: $(last -1 -F | awk 'NR==1{print $1" logged in on "$5" "$6" "$7" from "$3}')"
+echo "#############################################"
