@@ -16,3 +16,9 @@ echo "   \\    /\\    /    |  |____ |  \`----.|  \`----.|  \`--'  | |  |  |  | |
 echo "    \\__/  \\__/     |_______||_______| \\______| \\______/  |__|  |__| |_______|   |______/  /__/     \\__\\ \\______||__|\\__\\"
 echo ""
 echo "#############################################"
+
+# System Info
+echo "System Info:"
+echo "Hostname: $(hostname)"
+echo "Kernel Version: $(uname -r)"
+echo "Ubuntu Version: $(lsb_release -d | awk -F ":\t" '{print $2}')"
