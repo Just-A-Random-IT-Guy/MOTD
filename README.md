@@ -2,7 +2,11 @@
 
   
 
+  
+
 This script allows you to set up a custom Message of the Day (MotD) for your Ubuntu server. The MotD is displayed when a user logs into the system via SSH or on the terminal.
+
+  
 
   
 
@@ -10,20 +14,34 @@ This script allows you to set up a custom Message of the Day (MotD) for your Ubu
 
   
 
+  
+
 Firstly, update the package index files on your system, this can be acheive by running the following command:
+
+  
 
 `sudo apt update`
 
-**Ensure the following dependencies are installed on your Ubuntu system:**: 
+  
 
+**Ensure the following dependencies are installed on your Ubuntu system:**:
 
--   **Python3**: To install, run:
+  
+  
+
+-  **Python3**: To install, run:
+
+  
 
 `sudo apt install python3 -y`
 
-
+  
+  
+  
 
 -  **Python Requests Module**: Install using pip (Python package installer):
+
+  
 
   
 
@@ -31,11 +49,19 @@ Firstly, update the package index files on your system, this can be acheive by r
 
   
 
+  
+
 `pip3 install requests`
+
+  
 
 -  **curl**: To install, run:
 
+  
+
 `sudo apt install curl -y`
+
+  
 
   
 
@@ -43,24 +69,39 @@ Firstly, update the package index files on your system, this can be acheive by r
 
   
 
+  
+
 `sudo apt install jq -y`
 
   
+
   
 
 ## Usage
 
   
 
+  
+
 1.  **Disable Default MOTD**:
+
+  
 
 To disable the existing default MOTD, remove the executable permissions from the existing MOTD files:
 
+  
+
 `sudo chmod -x /etc/update-motd.d/*`
+
+  
 
 2.  **Download the Custom MOTD Script and Set Permissions**:
 
+  
+
 Clone the repository and copy the script to the appropriate directory, then make it executable:
+
+  
 
   
 
@@ -68,7 +109,11 @@ Clone the repository and copy the script to the appropriate directory, then make
 
   
 
+  
+
 `cd MOTD`
+
+  
 
   
 
@@ -76,15 +121,124 @@ Clone the repository and copy the script to the appropriate directory, then make
 
   
 
+  
+
 `sudo chmod +x /etc/update-motd.d/99-custom-motd`
+
+  
 
   
 
 3.  **Log Out and Log In**:
 
+  
+
 Log out and log back in to your Ubuntu system via SSH or on the terminal to see the new custom Message of the Day.
+
+  
 
 If all the steps above we're following correctly, your new (MOTD) Message of The Day should look limilar to the one below:
 
+  
+  
 
 ![alt text](ubuntu_motd.png)
+
+
+# Custom Message of the Day (MotD) for Redhat Servers
+
+
+This script allows you to set up a custom Message of the Day (MotD) for your Redhat server. The MotD is displayed when a user logs into the system via SSH or on the terminal.
+
+  
+
+Firstly, update the package index files on your system, this can be acheive by running the following command:
+
+  
+
+`sudo yum update`
+
+  
+
+**Ensure the following dependencies are installed on your Ubuntu system:**:
+
+  
+  
+
+-  **Python3**: To install, run:
+
+  
+
+`sudo yum install python3 -y`
+
+  
+  
+  
+
+-  **Python Requests Module**: Install using pip (Python package installer):
+
+
+
+`sudo yum install python3-pip -y`
+
+
+`pip3 install requests`
+
+  
+
+-  **curl**: To install, run:
+
+  
+
+`sudo yum install curl -y`  
+
+-  **jq**: To install, run:
+
+`sudo yum install jq -y`
+
+  
+
+  
+
+## Usage
+
+  
+
+  
+1.  **Download the Custom MOTD Script and Set Permissions**:
+
+  
+
+Clone the repository and copy the script to the appropriate directory, then make it executable:
+
+  
+
+  
+
+`git clone https://github.com/Just-A-Random-IT-Guy/MOTD.git`
+  
+
+`cd MOTD`
+  
+`sudo cp custom_redhat_motd.sh /etc/profile.d/`
+  
+`sudo chmod +x /etc/profile.d/custom_redhat_motd.sh`
+
+  
+
+  
+
+3.  **Log Out and Log In**:
+
+  
+
+Log out and log back in to your Redhat system via SSH or on the terminal to see the new custom Message of the Day.
+
+  
+
+If all the steps above we're following correctly, your new (MOTD) Message of The Day should look limilar to the one below:
+
+  
+  
+
+![alt text](redhat_motd.png)
