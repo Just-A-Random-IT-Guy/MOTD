@@ -30,8 +30,11 @@ Ensure the following dependencies are installed on your Ubuntu system:
     Clone the repository and copy the script to the appropriate directory, then make it executable:
 
     `git clone https://github.com/Just-A-Random-IT-Guy/MOTD.git` 
+
     `cd MOTD` 
+
     `sudo cp 99-custom-motd /etc/update-motd.d/` 
+    
     `sudo chmod +x /etc/update-motd.d/99-custom-motd` 
 
     
